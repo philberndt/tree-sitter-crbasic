@@ -51,12 +51,14 @@ VoltSE(Battery, 1, 2, 3)
 
 (source_file
   (function_call
-    (identifier)
-    (argument_list
-      (identifier)
-      (number)
-      (number)
-      (number))))
+    (builtin_function_call
+      (builtin_function_name)
+      (argument_list
+        (identifier
+          (builtin_function_name))
+        (number)
+        (number)
+        (number)))))
 
 ================================================================================
 If Statement
@@ -119,17 +121,18 @@ NextScan
     (number)
     (number)
     (function_call
-      (identifier)
-      (argument_list
-        (identifier)
-        (number)
-        (identifier)
-        (number)
-        (number)
-        (number)
-        (number)
-        (number)
-        (number)))))
+      (builtin_function_call
+        (builtin_function_name)
+        (argument_list
+          (identifier)
+          (number)
+          (identifier)
+          (number)
+          (number)
+          (number)
+          (number)
+          (number)
+          (number))))))
 
 ================================================================================
 Boolean Values

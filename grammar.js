@@ -61,11 +61,58 @@ module.exports = grammar({
     ),
 
     // Function calls
-    function_call: $ => seq(
+    function_call: $ => choice(
+      $.builtin_function_call,
+      $.user_function_call,
+    ),
+
+    builtin_function_call: $ => prec(1, seq(
+      $.builtin_function_name,
+      '(',
+      optional($.argument_list),
+      ')',
+    )),
+
+    user_function_call: $ => seq(
       $.identifier,
       '(',
       optional($.argument_list),
       ')',
+    ),
+
+    builtin_function_name: $ => choice(
+      // Measurement functions
+      'PanelTemp', 'Battery', 'VoltSE', 'VoltDiff', 'CurrentSE', 'BrFull', 'BrHalf',
+      'BrFull6W', 'BrHalf3W', 'BrHalf4W', 'Resistance', 'Resistance3W', 'PeriodAvg',
+      'PulseCount', 'PulsePort', 'TCDiff', 'TCSe', 'Therm107', 'Therm108', 'Therm109',
+      'PRT', 'PRTCalc', 'SW12', 'ExciteV', 'ExciteI', 'MuxSelect',
+
+      // Data processing functions
+      'Sample', 'Average', 'Maximum', 'Minimum', 'StdDev', 'Totalize', 'AvgRun', 'MaxRun',
+      'MinRun', 'TotalRun', 'Covariance', 'Moment', 'Histogram', 'WindVector', 'FieldCal',
+
+      // Data table functions
+      'DataInterval', 'FieldNames', 'TableFile', 'CallTable',
+
+      // Communication functions
+      'SerialOpen', 'SerialClose', 'SerialIn', 'SerialOut', 'SerialInRecord', 'SerialOutBlock',
+      'ModbusMaster', 'ModbusSlave', 'TCPOpen', 'TCPClose', 'UDPOpen', 'HTTPGet', 'HTTPPost',
+      'EmailSend', 'FTPClient', 'SDI12Recorder', 'SDI12SensorSetup',
+
+      // System functions
+      'ClockSet', 'ClockReport', 'Timer', 'Delay', 'Move', 'MoveBytes', 'FileOpen', 'FileClose',
+      'FileRead', 'FileWrite', 'WriteIO', 'ReadIO', 'SetSetting', 'GetVariables', 'SendVariables',
+
+      // Math functions
+      'ABS', 'Sqr', 'Exp', 'Log', 'LN', 'Sin', 'Cos', 'Tan', 'ASin', 'ACos', 'Atn', 'Atn2',
+      'Int', 'Fix', 'Round', 'Ceiling', 'Floor', 'Sgn', 'Randomize', 'RND',
+
+      // String functions
+      'CHR', 'ASC', 'Len', 'Mid', 'Left', 'Right', 'InStr', 'LowerCase', 'UpperCase', 'Trim',
+      'LTrim', 'RTrim', 'FormatFloat', 'FormatLong', 'Sprintf',
+
+      // Conditional functions
+      'IIF', 'IfTime', 'TimeIsBetween', 'TimeIntoInterval',
     ),
 
     argument_list: $ => seq(
@@ -208,7 +255,10 @@ module.exports = grammar({
     ),
 
     // Terminals
-    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
+    identifier: $ => choice(
+      /[a-zA-Z_][a-zA-Z0-9_]*/,
+      $.builtin_function_name
+    ),
 
     number: $ => choice(
       // Binary numbers

@@ -134,6 +134,30 @@
     "fields": {}
   },
   {
+    "type": "builtin_function_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
+        {
+          "type": "builtin_function_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "builtin_function_name",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "constant_declaration",
     "named": true,
     "fields": {},
@@ -485,15 +509,30 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "argument_list",
+          "type": "builtin_function_call",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "user_function_call",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "builtin_function_name",
           "named": true
         }
       ]
@@ -1188,6 +1227,25 @@
     }
   },
   {
+    "type": "user_function_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable_declaration",
     "named": true,
     "fields": {},
@@ -1402,11 +1460,47 @@
     "named": false
   },
   {
+    "type": "ABS",
+    "named": false
+  },
+  {
+    "type": "ACos",
+    "named": false
+  },
+  {
     "type": "AND",
     "named": false
   },
   {
+    "type": "ASC",
+    "named": false
+  },
+  {
+    "type": "ASin",
+    "named": false
+  },
+  {
     "type": "As",
+    "named": false
+  },
+  {
+    "type": "Atn",
+    "named": false
+  },
+  {
+    "type": "Atn2",
+    "named": false
+  },
+  {
+    "type": "Average",
+    "named": false
+  },
+  {
+    "type": "AvgRun",
+    "named": false
+  },
+  {
+    "type": "Battery",
     "named": false
   },
   {
@@ -1422,11 +1516,47 @@
     "named": false
   },
   {
+    "type": "BrFull",
+    "named": false
+  },
+  {
+    "type": "BrFull6W",
+    "named": false
+  },
+  {
+    "type": "BrHalf",
+    "named": false
+  },
+  {
+    "type": "BrHalf3W",
+    "named": false
+  },
+  {
+    "type": "BrHalf4W",
+    "named": false
+  },
+  {
+    "type": "CHR",
+    "named": false
+  },
+  {
     "type": "CallTable",
     "named": false
   },
   {
     "type": "Case",
+    "named": false
+  },
+  {
+    "type": "Ceiling",
+    "named": false
+  },
+  {
+    "type": "ClockReport",
+    "named": false
+  },
+  {
+    "type": "ClockSet",
     "named": false
   },
   {
@@ -1438,7 +1568,27 @@
     "named": false
   },
   {
+    "type": "Cos",
+    "named": false
+  },
+  {
+    "type": "Covariance",
+    "named": false
+  },
+  {
+    "type": "CurrentSE",
+    "named": false
+  },
+  {
+    "type": "DataInterval",
+    "named": false
+  },
+  {
     "type": "DataTable",
+    "named": false
+  },
+  {
+    "type": "Delay",
     "named": false
   },
   {
@@ -1467,6 +1617,10 @@
   },
   {
     "type": "ElseIf",
+    "named": false
+  },
+  {
+    "type": "EmailSend",
     "named": false
   },
   {
@@ -1510,6 +1664,18 @@
     "named": false
   },
   {
+    "type": "ExciteI",
+    "named": false
+  },
+  {
+    "type": "ExciteV",
+    "named": false
+  },
+  {
+    "type": "Exp",
+    "named": false
+  },
+  {
     "type": "FALSE",
     "named": false
   },
@@ -1518,7 +1684,39 @@
     "named": false
   },
   {
+    "type": "FTPClient",
+    "named": false
+  },
+  {
     "type": "False",
+    "named": false
+  },
+  {
+    "type": "FieldCal",
+    "named": false
+  },
+  {
+    "type": "FieldNames",
+    "named": false
+  },
+  {
+    "type": "FileClose",
+    "named": false
+  },
+  {
+    "type": "FileOpen",
+    "named": false
+  },
+  {
+    "type": "FileRead",
+    "named": false
+  },
+  {
+    "type": "FileWrite",
+    "named": false
+  },
+  {
+    "type": "Fix",
     "named": false
   },
   {
@@ -1526,11 +1724,39 @@
     "named": false
   },
   {
+    "type": "Floor",
+    "named": false
+  },
+  {
     "type": "For",
     "named": false
   },
   {
+    "type": "FormatFloat",
+    "named": false
+  },
+  {
+    "type": "FormatLong",
+    "named": false
+  },
+  {
     "type": "Function",
+    "named": false
+  },
+  {
+    "type": "GetVariables",
+    "named": false
+  },
+  {
+    "type": "HTTPGet",
+    "named": false
+  },
+  {
+    "type": "HTTPPost",
+    "named": false
+  },
+  {
+    "type": "Histogram",
     "named": false
   },
   {
@@ -1539,6 +1765,10 @@
   },
   {
     "type": "IEEE8",
+    "named": false
+  },
+  {
+    "type": "IIF",
     "named": false
   },
   {
@@ -1554,11 +1784,43 @@
     "named": false
   },
   {
+    "type": "IfTime",
+    "named": false
+  },
+  {
+    "type": "InStr",
+    "named": false
+  },
+  {
     "type": "Include",
     "named": false
   },
   {
+    "type": "Int",
+    "named": false
+  },
+  {
     "type": "Is",
+    "named": false
+  },
+  {
+    "type": "LN",
+    "named": false
+  },
+  {
+    "type": "LTrim",
+    "named": false
+  },
+  {
+    "type": "Left",
+    "named": false
+  },
+  {
+    "type": "Len",
+    "named": false
+  },
+  {
+    "type": "Log",
     "named": false
   },
   {
@@ -1570,11 +1832,59 @@
     "named": false
   },
   {
+    "type": "LowerCase",
+    "named": false
+  },
+  {
     "type": "MOD",
     "named": false
   },
   {
+    "type": "MaxRun",
+    "named": false
+  },
+  {
+    "type": "Maximum",
+    "named": false
+  },
+  {
     "type": "MenuItem",
+    "named": false
+  },
+  {
+    "type": "Mid",
+    "named": false
+  },
+  {
+    "type": "MinRun",
+    "named": false
+  },
+  {
+    "type": "Minimum",
+    "named": false
+  },
+  {
+    "type": "ModbusMaster",
+    "named": false
+  },
+  {
+    "type": "ModbusSlave",
+    "named": false
+  },
+  {
+    "type": "Moment",
+    "named": false
+  },
+  {
+    "type": "Move",
+    "named": false
+  },
+  {
+    "type": "MoveBytes",
+    "named": false
+  },
+  {
+    "type": "MuxSelect",
     "named": false
   },
   {
@@ -1602,7 +1912,79 @@
     "named": false
   },
   {
+    "type": "PRT",
+    "named": false
+  },
+  {
+    "type": "PRTCalc",
+    "named": false
+  },
+  {
+    "type": "PanelTemp",
+    "named": false
+  },
+  {
+    "type": "PeriodAvg",
+    "named": false
+  },
+  {
     "type": "Public",
+    "named": false
+  },
+  {
+    "type": "PulseCount",
+    "named": false
+  },
+  {
+    "type": "PulsePort",
+    "named": false
+  },
+  {
+    "type": "RND",
+    "named": false
+  },
+  {
+    "type": "RTrim",
+    "named": false
+  },
+  {
+    "type": "Randomize",
+    "named": false
+  },
+  {
+    "type": "ReadIO",
+    "named": false
+  },
+  {
+    "type": "Resistance",
+    "named": false
+  },
+  {
+    "type": "Resistance3W",
+    "named": false
+  },
+  {
+    "type": "Right",
+    "named": false
+  },
+  {
+    "type": "Round",
+    "named": false
+  },
+  {
+    "type": "SDI12Recorder",
+    "named": false
+  },
+  {
+    "type": "SDI12SensorSetup",
+    "named": false
+  },
+  {
+    "type": "SW12",
+    "named": false
+  },
+  {
+    "type": "Sample",
     "named": false
   },
   {
@@ -1614,7 +1996,59 @@
     "named": false
   },
   {
+    "type": "SendVariables",
+    "named": false
+  },
+  {
+    "type": "SerialClose",
+    "named": false
+  },
+  {
+    "type": "SerialIn",
+    "named": false
+  },
+  {
+    "type": "SerialInRecord",
+    "named": false
+  },
+  {
+    "type": "SerialOpen",
+    "named": false
+  },
+  {
+    "type": "SerialOut",
+    "named": false
+  },
+  {
+    "type": "SerialOutBlock",
+    "named": false
+  },
+  {
+    "type": "SetSetting",
+    "named": false
+  },
+  {
+    "type": "Sgn",
+    "named": false
+  },
+  {
+    "type": "Sin",
+    "named": false
+  },
+  {
     "type": "SlowSequence",
+    "named": false
+  },
+  {
+    "type": "Sprintf",
+    "named": false
+  },
+  {
+    "type": "Sqr",
+    "named": false
+  },
+  {
+    "type": "StdDev",
     "named": false
   },
   {
@@ -1638,7 +2072,31 @@
     "named": false
   },
   {
+    "type": "TCDiff",
+    "named": false
+  },
+  {
+    "type": "TCPClose",
+    "named": false
+  },
+  {
+    "type": "TCPOpen",
+    "named": false
+  },
+  {
+    "type": "TCSe",
+    "named": false
+  },
+  {
     "type": "TRUE",
+    "named": false
+  },
+  {
+    "type": "TableFile",
+    "named": false
+  },
+  {
+    "type": "Tan",
     "named": false
   },
   {
@@ -1646,11 +2104,51 @@
     "named": false
   },
   {
+    "type": "Therm107",
+    "named": false
+  },
+  {
+    "type": "Therm108",
+    "named": false
+  },
+  {
+    "type": "Therm109",
+    "named": false
+  },
+  {
+    "type": "TimeIntoInterval",
+    "named": false
+  },
+  {
+    "type": "TimeIsBetween",
+    "named": false
+  },
+  {
+    "type": "Timer",
+    "named": false
+  },
+  {
     "type": "To",
     "named": false
   },
   {
+    "type": "TotalRun",
+    "named": false
+  },
+  {
+    "type": "Totalize",
+    "named": false
+  },
+  {
+    "type": "Trim",
+    "named": false
+  },
+  {
     "type": "True",
+    "named": false
+  },
+  {
+    "type": "UDPOpen",
     "named": false
   },
   {
@@ -1670,11 +2168,31 @@
     "named": false
   },
   {
+    "type": "UpperCase",
+    "named": false
+  },
+  {
+    "type": "VoltDiff",
+    "named": false
+  },
+  {
+    "type": "VoltSE",
+    "named": false
+  },
+  {
     "type": "Wend",
     "named": false
   },
   {
     "type": "While",
+    "named": false
+  },
+  {
+    "type": "WindVector",
+    "named": false
+  },
+  {
+    "type": "WriteIO",
     "named": false
   },
   {
@@ -1701,10 +2219,6 @@
   {
     "type": "false",
     "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
   },
   {
     "type": "true",

@@ -312,6 +312,52 @@
       ]
     },
     "function_call": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "builtin_function_call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "user_function_call"
+        }
+      ]
+    },
+    "builtin_function_call": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "builtin_function_name"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "argument_list"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          }
+        ]
+      }
+    },
+    "user_function_call": {
       "type": "SEQ",
       "members": [
         {
@@ -337,6 +383,475 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "builtin_function_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "PanelTemp"
+        },
+        {
+          "type": "STRING",
+          "value": "Battery"
+        },
+        {
+          "type": "STRING",
+          "value": "VoltSE"
+        },
+        {
+          "type": "STRING",
+          "value": "VoltDiff"
+        },
+        {
+          "type": "STRING",
+          "value": "CurrentSE"
+        },
+        {
+          "type": "STRING",
+          "value": "BrFull"
+        },
+        {
+          "type": "STRING",
+          "value": "BrHalf"
+        },
+        {
+          "type": "STRING",
+          "value": "BrFull6W"
+        },
+        {
+          "type": "STRING",
+          "value": "BrHalf3W"
+        },
+        {
+          "type": "STRING",
+          "value": "BrHalf4W"
+        },
+        {
+          "type": "STRING",
+          "value": "Resistance"
+        },
+        {
+          "type": "STRING",
+          "value": "Resistance3W"
+        },
+        {
+          "type": "STRING",
+          "value": "PeriodAvg"
+        },
+        {
+          "type": "STRING",
+          "value": "PulseCount"
+        },
+        {
+          "type": "STRING",
+          "value": "PulsePort"
+        },
+        {
+          "type": "STRING",
+          "value": "TCDiff"
+        },
+        {
+          "type": "STRING",
+          "value": "TCSe"
+        },
+        {
+          "type": "STRING",
+          "value": "Therm107"
+        },
+        {
+          "type": "STRING",
+          "value": "Therm108"
+        },
+        {
+          "type": "STRING",
+          "value": "Therm109"
+        },
+        {
+          "type": "STRING",
+          "value": "PRT"
+        },
+        {
+          "type": "STRING",
+          "value": "PRTCalc"
+        },
+        {
+          "type": "STRING",
+          "value": "SW12"
+        },
+        {
+          "type": "STRING",
+          "value": "ExciteV"
+        },
+        {
+          "type": "STRING",
+          "value": "ExciteI"
+        },
+        {
+          "type": "STRING",
+          "value": "MuxSelect"
+        },
+        {
+          "type": "STRING",
+          "value": "Sample"
+        },
+        {
+          "type": "STRING",
+          "value": "Average"
+        },
+        {
+          "type": "STRING",
+          "value": "Maximum"
+        },
+        {
+          "type": "STRING",
+          "value": "Minimum"
+        },
+        {
+          "type": "STRING",
+          "value": "StdDev"
+        },
+        {
+          "type": "STRING",
+          "value": "Totalize"
+        },
+        {
+          "type": "STRING",
+          "value": "AvgRun"
+        },
+        {
+          "type": "STRING",
+          "value": "MaxRun"
+        },
+        {
+          "type": "STRING",
+          "value": "MinRun"
+        },
+        {
+          "type": "STRING",
+          "value": "TotalRun"
+        },
+        {
+          "type": "STRING",
+          "value": "Covariance"
+        },
+        {
+          "type": "STRING",
+          "value": "Moment"
+        },
+        {
+          "type": "STRING",
+          "value": "Histogram"
+        },
+        {
+          "type": "STRING",
+          "value": "WindVector"
+        },
+        {
+          "type": "STRING",
+          "value": "FieldCal"
+        },
+        {
+          "type": "STRING",
+          "value": "DataInterval"
+        },
+        {
+          "type": "STRING",
+          "value": "FieldNames"
+        },
+        {
+          "type": "STRING",
+          "value": "TableFile"
+        },
+        {
+          "type": "STRING",
+          "value": "CallTable"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialOpen"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialClose"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialIn"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialOut"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialInRecord"
+        },
+        {
+          "type": "STRING",
+          "value": "SerialOutBlock"
+        },
+        {
+          "type": "STRING",
+          "value": "ModbusMaster"
+        },
+        {
+          "type": "STRING",
+          "value": "ModbusSlave"
+        },
+        {
+          "type": "STRING",
+          "value": "TCPOpen"
+        },
+        {
+          "type": "STRING",
+          "value": "TCPClose"
+        },
+        {
+          "type": "STRING",
+          "value": "UDPOpen"
+        },
+        {
+          "type": "STRING",
+          "value": "HTTPGet"
+        },
+        {
+          "type": "STRING",
+          "value": "HTTPPost"
+        },
+        {
+          "type": "STRING",
+          "value": "EmailSend"
+        },
+        {
+          "type": "STRING",
+          "value": "FTPClient"
+        },
+        {
+          "type": "STRING",
+          "value": "SDI12Recorder"
+        },
+        {
+          "type": "STRING",
+          "value": "SDI12SensorSetup"
+        },
+        {
+          "type": "STRING",
+          "value": "ClockSet"
+        },
+        {
+          "type": "STRING",
+          "value": "ClockReport"
+        },
+        {
+          "type": "STRING",
+          "value": "Timer"
+        },
+        {
+          "type": "STRING",
+          "value": "Delay"
+        },
+        {
+          "type": "STRING",
+          "value": "Move"
+        },
+        {
+          "type": "STRING",
+          "value": "MoveBytes"
+        },
+        {
+          "type": "STRING",
+          "value": "FileOpen"
+        },
+        {
+          "type": "STRING",
+          "value": "FileClose"
+        },
+        {
+          "type": "STRING",
+          "value": "FileRead"
+        },
+        {
+          "type": "STRING",
+          "value": "FileWrite"
+        },
+        {
+          "type": "STRING",
+          "value": "WriteIO"
+        },
+        {
+          "type": "STRING",
+          "value": "ReadIO"
+        },
+        {
+          "type": "STRING",
+          "value": "SetSetting"
+        },
+        {
+          "type": "STRING",
+          "value": "GetVariables"
+        },
+        {
+          "type": "STRING",
+          "value": "SendVariables"
+        },
+        {
+          "type": "STRING",
+          "value": "ABS"
+        },
+        {
+          "type": "STRING",
+          "value": "Sqr"
+        },
+        {
+          "type": "STRING",
+          "value": "Exp"
+        },
+        {
+          "type": "STRING",
+          "value": "Log"
+        },
+        {
+          "type": "STRING",
+          "value": "LN"
+        },
+        {
+          "type": "STRING",
+          "value": "Sin"
+        },
+        {
+          "type": "STRING",
+          "value": "Cos"
+        },
+        {
+          "type": "STRING",
+          "value": "Tan"
+        },
+        {
+          "type": "STRING",
+          "value": "ASin"
+        },
+        {
+          "type": "STRING",
+          "value": "ACos"
+        },
+        {
+          "type": "STRING",
+          "value": "Atn"
+        },
+        {
+          "type": "STRING",
+          "value": "Atn2"
+        },
+        {
+          "type": "STRING",
+          "value": "Int"
+        },
+        {
+          "type": "STRING",
+          "value": "Fix"
+        },
+        {
+          "type": "STRING",
+          "value": "Round"
+        },
+        {
+          "type": "STRING",
+          "value": "Ceiling"
+        },
+        {
+          "type": "STRING",
+          "value": "Floor"
+        },
+        {
+          "type": "STRING",
+          "value": "Sgn"
+        },
+        {
+          "type": "STRING",
+          "value": "Randomize"
+        },
+        {
+          "type": "STRING",
+          "value": "RND"
+        },
+        {
+          "type": "STRING",
+          "value": "CHR"
+        },
+        {
+          "type": "STRING",
+          "value": "ASC"
+        },
+        {
+          "type": "STRING",
+          "value": "Len"
+        },
+        {
+          "type": "STRING",
+          "value": "Mid"
+        },
+        {
+          "type": "STRING",
+          "value": "Left"
+        },
+        {
+          "type": "STRING",
+          "value": "Right"
+        },
+        {
+          "type": "STRING",
+          "value": "InStr"
+        },
+        {
+          "type": "STRING",
+          "value": "LowerCase"
+        },
+        {
+          "type": "STRING",
+          "value": "UpperCase"
+        },
+        {
+          "type": "STRING",
+          "value": "Trim"
+        },
+        {
+          "type": "STRING",
+          "value": "LTrim"
+        },
+        {
+          "type": "STRING",
+          "value": "RTrim"
+        },
+        {
+          "type": "STRING",
+          "value": "FormatFloat"
+        },
+        {
+          "type": "STRING",
+          "value": "FormatLong"
+        },
+        {
+          "type": "STRING",
+          "value": "Sprintf"
+        },
+        {
+          "type": "STRING",
+          "value": "IIF"
+        },
+        {
+          "type": "STRING",
+          "value": "IfTime"
+        },
+        {
+          "type": "STRING",
+          "value": "TimeIsBetween"
+        },
+        {
+          "type": "STRING",
+          "value": "TimeIntoInterval"
         }
       ]
     },
@@ -1531,8 +2046,17 @@
       ]
     },
     "identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][a-zA-Z0-9_]*"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-zA-Z_][a-zA-Z0-9_]*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "builtin_function_name"
+        }
+      ]
     },
     "number": {
       "type": "CHOICE",
