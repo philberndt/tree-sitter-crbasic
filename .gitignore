@@ -1,5 +1,4 @@
 node_modules/
-src/
 *.o
 *.so
 *.dylib
@@ -9,3 +8,10 @@ build/
 binding.gyp
 bindings/
 prebuilds/
+
+# Keep generated parser files for Zed extension
+!src/
+!src/parser.c
+!src/grammar.json
+!src/node-types.json
+!src/tree_sitter/
