@@ -1,0 +1,49 @@
+{
+  "name": "tree-sitter-crbasic",
+  "version": "1.0.0",
+  "description": "CRBasic grammar for tree-sitter",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "crbasic",
+    "campbell-scientific"
+  ],
+  "author": "philberndt",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.22.5"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.crbasic",
+      "file-types": [
+        "cr300",
+        "cr6",
+        "cr1x",
+        "cr9x",
+        "cr1",
+        "cr2",
+        "cr3",
+        "cr5",
+        "cr8",
+        "cr9",
+        "crb",
+        "dld"
+      ]
+    }
+  ]
+}

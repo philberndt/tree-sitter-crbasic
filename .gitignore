@@ -1,0 +1,11 @@
+node_modules/
+src/
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+build/
+binding.gyp
+bindings/
+prebuilds/

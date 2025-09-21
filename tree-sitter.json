@@ -1,0 +1,9 @@
+{
+  "grammars": ["./"],
+  "parser-directories": [],
+  "metadata": {
+    "name": "tree-sitter-crbasic",
+    "license": "MIT",
+    "version": "1.0.0"
+  }
+}
